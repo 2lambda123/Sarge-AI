@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Checkout code
@@ -18,11 +18,12 @@ jobs:
 
       - name: Set up environment
         run: |
-          # Set up environment here
+          echo 'Setting up the environment'
 
       - name: Build and test
         run: |
-          # Build and test commands here
+          npm install
+npm run build
 
       - name: Report test results
         run: |
