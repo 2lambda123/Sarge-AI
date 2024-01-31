@@ -1,0 +1,33 @@
+name: ".github/workflows/main.yml"
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up environment
+        run: |
+          # Set up environment here
+
+      - name: Build and test
+        run: |
+          # Build and test commands here
+
+      - name: Report test results
+        run: |
+          # Report test results here
+
+      - name: Deploy
+        run: |
+          # Deployment commands here
