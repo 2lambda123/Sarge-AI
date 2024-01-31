@@ -10,13 +10,13 @@
 	Modded for Arma 3: Epoch Mod
 	Changes: Dango
 	https://www.hod-servers.com
-	
+
 	Tips:
 	- All time formats are configured in seconds
 	- All distance formats are in meters
 	- Secondary AI skills can be decimal values i.e. 0.23
 	- Lower time intervals for detections require more CPU resources
-	
+
 */
 private ["_SAR_supportedMaps","_config","_modConfigs","_modPatches","_modName","_worldname","_startx","_starty","_gridsize_x","_gridsize_y","_gridwidth","_markername","_triggername","_trig_act_stmnt","_trig_deact_stmnt","_trig_cond","_legendname"];
 
@@ -50,28 +50,28 @@ SAR_AI_unfriendly_side = "";
 
 switch (_modName) do {
 	case "desolation": {
-		
+
 		SAR_AI_friendly_side = INDEPENDENT;
 		SAR_AI_unfriendly_side = EAST;
-		
+
 		EAST setFriend [CIVILIAN, 0];
 	};
 	case "exile": {
-		
+
 		SAR_AI_friendly_side = INDEPENDENT;
 		AR_AI_unfriendly_side = WEST;
-		
+
 		WEST setFriend [INDEPENDENT, 0];
 	};
 	case "epoch": {
-		
+
 		SAR_AI_friendly_side = WEST;
 		SAR_AI_unfriendly_side = RESISTANCE;
-		
+
 		RESISTANCE setFriend [WEST, 0];
 	};
 	case "breakingpoint": {
-		
+
 		SAR_AI_friendly_side = WEST;
 		SAR_AI_unfriendly_side = EAST;
 	};
@@ -103,12 +103,12 @@ _SAR_supportedMaps = ["altis","chernarus","chernarus_summer","chernarusredux","t
 if (SAR_dynamic_spawning) then {
 
 	_worldname = toLower worldName;
-	
+
 	if (!(_worldname in _SAR_supportedMaps)) exitWith {diag_log format ["Sarge's AI System: %1 does not currently support dynamic AI spawning! Dynamic AI spawning has been disabled!",_worldName];};
-	
+
 	diag_log format ["Sarge's AI System: Now generating dynamic map grid for %1.",_worldname];
 	call compile preprocessFileLineNumbers (format ["\addons\sarge\code\map_config\SAR_cfg_grid_%1.sqf",_worldname]);
-	
+
 	// Create grid system and triggers
     SAR_area_ = text format ["SAR_area_%1","x"];
     for "_i" from 0 to (_gridsize_y - 1) do
@@ -167,7 +167,7 @@ if (SAR_dynamic_spawning) then {
         };
     };
     diag_log format["Sarge's AI System: The map grid has been established for %1.",worldName];
-	
+
 	["dynamic"] call compile preprocessFileLineNumbers (format ["\addons\sarge\code\map_config\SAR_cfg_grps_%1.sqf",_worldname]);
 	diag_log format["Sarge's AI System: Dynamic spawn definitions have been configured for %1.",worldName];
 };
