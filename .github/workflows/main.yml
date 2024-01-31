@@ -1,0 +1,41 @@
+name: ".github/workflows/main.yml"
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up environment
+        run: |
+          # Set up environment here
+      - name: Build and test
+        run: |
+          # Build and test commands here
+
+      - name: Build
+        run: |
+          npm run build
+          echo 'Setting up the environment'
+
+      - name: Build and test
+        run: |
+          npm install
+npm run build
+
+      - name: Report test results
+        run: |
+          # Report test results here
+
+      - name: Notify
+        run: |
+          # Notification commands here
