@@ -10,12 +10,17 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Install dependencies
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up environment
         run: |
-          npm install
+          # Set up environment here
+      - name: Build and test
+        run: |
+          # Build and test commands here
 
       - name: Build
         run: |
@@ -31,6 +36,6 @@ npm run build
         run: |
           # Report test results here
 
-      - name: Deploy
+      - name: Notify
         run: |
-          # Deployment commands here
+          # Notification commands here
