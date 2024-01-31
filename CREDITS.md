@@ -1,17 +1,21 @@
 # Sarge AI Fork
+
 Dango
 
 https://www.hod-servers.com/forum
 
 # SARGE AI
+
 Thanks to SARGE for executing a great idea for Arma survival style servers.
 
 https://github.com/Swiss-Sarge
 
 # UPSMON
+
 I (Cool=Azroul13) continue to work on the UPSMON script, created by Monsada for Arma2, improved by Rafalsky, Nordin and Shay_Gman and ported to Arma 3 by Ollem.
 
 Many thanks to:
+
 - Kronzky who create the UPS script which is the base of UPSMON
 - Monsada who's the one that create this master piece.
 - Rafalsky who made several improvements to the script.
