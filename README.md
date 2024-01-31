@@ -1,5 +1,5 @@
 # Sarge AI System
-This is an AI system that is intended to simulate real players roaming the map, scavenging, looting and engaging in combat. Unlike other AI systems Sarge AI designates two factions as friendly and only one faction as hostile. This approach provides a simulated pvp/pve environment that changes depending on how players react to the AI.
+This is an AI system that is intended to provide instructions for running the GitHub Actions workflow. Unlike other AI systems Sarge AI designates two factions as friendly and only one faction as hostile. This approach provides a simulated pvp/pve environment that changes depending on how players react to the AI.
 
 ## Behaviour
 AI hostility is based on player rating and AI will change their behaviour depending on a players rating level. Above the threshold the friendly AI will not attack players. Below the threshold friendly AI will consider the player hostile and fire on sight. Bandit AI will always be hostile to players regardless of player rating.
